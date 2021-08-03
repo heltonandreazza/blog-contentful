@@ -1,9 +1,9 @@
 import React from 'react'
 /*
-  This example requires Tailwind CSS v2.0+ 
-  
+  This example requires Tailwind CSS v2.0+
+
   This example requires some changes to your config:
-  
+
   ```
   // tailwind.config.js
   module.exports = {
@@ -21,7 +21,13 @@ export default function Example() {
       <div className="relative sm:py-16">
         <div aria-hidden="true" className="hidden sm:block">
           <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-50 rounded-r-3xl" />
-          <svg className="absolute top-8 left-1/2 -ml-3" width={404} height={392} fill="none" viewBox="0 0 404 392">
+          <svg
+            className="absolute top-8 left-1/2 -ml-3"
+            width={404}
+            height={392}
+            fill="none"
+            viewBox="0 0 404 392"
+          >
             <defs>
               <pattern
                 id="8228f071-bcee-4ec8-905a-2a059a2cc4fb"
@@ -31,7 +37,14 @@ export default function Example() {
                 height={20}
                 patternUnits="userSpaceOnUse"
               >
-                <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+                <rect
+                  x={0}
+                  y={0}
+                  width={4}
+                  height={4}
+                  className="text-gray-200"
+                  fill="currentColor"
+                />
               </pattern>
             </defs>
             <rect width={404} height={392} fill="url(#8228f071-bcee-4ec8-905a-2a059a2cc4fb)" />
@@ -62,10 +75,11 @@ export default function Example() {
             <div className="relative">
               <div className="sm:text-center">
                 <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-                  Receba nossas notícias no seu e-mail
+                  Receba nossos artigos no seu e-mail
                 </h2>
                 <p className="mt-6 mx-auto max-w-2xl text-lg text-green-200">
-                  melhore de vida aprendendo sobre o seu corpo e saúde com o blog da academia cultural
+                  melhore de vida aprendendo sobre o seu corpo e saúde com o blog da academia
+                  cultural
                 </p>
               </div>
               <form action="#" className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
@@ -85,7 +99,7 @@ export default function Example() {
                     type="submit"
                     className="block w-full rounded-md border border-transparent px-5 py-3 bg-green-500 text-base font-medium text-white shadow hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600 sm:px-10"
                   >
-                    Quero ficar por dentro
+                    Quero receber
                   </button>
                 </div>
               </form>

@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from '../assets/logo.png'
 
 const Footer = () => (
   <footer className="bg-white" aria-labelledby="footerHeading">
@@ -8,13 +9,13 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <div className="xl:grid xl:grid-cols-3 xl:gap-8">
         <div className="space-y-8 xl:col-span-1">
-          <img className="h-14" src={'logo'} alt="Academia cultural" />
+          <img className="h-14" src={logo} alt="Academia cultural" />
           <p className="text-gray-500 text-base">
             Fazendo do mundo um lugar melhor e mais saudável para se viver.
           </p>
           <div className="flex space-x-6">
             <a
-              href={''}
+              href=""
               target="_blank"
               className="text-green-400 hover:text-green-500"
               rel="noreferrer"
@@ -30,7 +31,7 @@ const Footer = () => (
             </a>
 
             <a
-              href={''}
+              href=""
               target="_blank"
               className="text-green-400 hover:text-green-500"
               rel="noreferrer"
@@ -46,7 +47,7 @@ const Footer = () => (
             </a>
 
             <a
-              href={''}
+              href=""
               target="_blank"
               className="text-green-400 hover:text-green-500"
               rel="noreferrer"
@@ -59,109 +60,20 @@ const Footer = () => (
           </div>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+          <div className="md:grid md:grid-cols-2 md:gap-8" />
           <div className="md:grid md:grid-cols-2 md:gap-8">
-            <div>
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-                Projetos
-              </h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <a href="#main-projects" className="text-base text-gray-500 hover:text-gray-900">
-                    Mais vendidos
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#more-projects" className="text-base text-gray-500 hover:text-gray-900">
-                    Mais comentados
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <div />
             <div className="mt-12 md:mt-0">
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-                Informações
-              </h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <a
-                    href={'#'}
-                    target="_blank"
-                    className="text-base text-gray-500 hover:text-gray-900"
-                    rel="noreferrer"
-                  >
-                    Atendimento
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href={''}
-                    target="_blank"
-                    className="text-base text-gray-500 hover:text-gray-900"
-                    rel="noreferrer"
-                  >
-                    App apple store
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href={''}
-                    target="_blank"
-                    className="text-base text-gray-500 hover:text-gray-900"
-                    rel="noreferrer"
-                  >
-                    App play store
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="md:grid md:grid-cols-2 md:gap-8">
-            <div>
               <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
                 Empresa
               </h3>
               <ul className="mt-4 space-y-4">
                 <li>
-                  <a href="#" className="text-base text-gray-500 hover:text-gray-900">
-                    Sobre
-                  </a>
-                </li>
-
-                {/* <li>
-                  <a href="#" className="text-base text-gray-500 hover:text-gray-900">
-                    Blog
-                  </a>
-                </li> */}
-
-                <li>
                   <a
-                    href=''
-                    target="_blank"
+                    href="https://www.academia-cultural.com/"
                     className="text-base text-gray-500 hover:text-gray-900"
-                    rel="noreferrer"
                   >
-                    Trabalhe conosco
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="mt-12 md:mt-0">
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-                Legal
-              </h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <a href="#" className="text-base text-gray-500 hover:text-gray-900">
-                    Termos de uso
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" className="text-base text-gray-500 hover:text-gray-900">
-                    Políticas de privacidade
+                    Sobre
                   </a>
                 </li>
               </ul>
