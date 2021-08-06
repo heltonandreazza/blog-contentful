@@ -1,14 +1,14 @@
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import React, { useState } from 'react'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import banner from '../assets/banner.png'
+import BlogCategories, { BlogCategoriesItem } from '../components/BlogCategories'
 import { BlogCategory, BlogCategoryItem } from '../components/BlogCategory'
+import { BlogCard, BlogColunCards } from '../components/BlogColunCards'
 import BlogPagination from '../components/BlogPagination'
+import Footer from '../components/Footer'
 import Navigator from '../components/Navigator'
 import Seo from '../components/Seo'
-import { BlogCard, BlogColunCards } from '../components/BlogColunCards'
-import Footer from '../components/Footer'
-import BlogCategories, { BlogCategoriesItem } from '../components/BlogCategories'
+import '../styles/global.css'
 
 const Blog = ({ data, pageContext }) => {
   const [showMenuMobile, setShowMenuMobile] = useState(false)
@@ -22,23 +22,23 @@ const Blog = ({ data, pageContext }) => {
         showMenuMobile={showMenuMobile}
       />
       <main>
-        <div className={`${pageContext.currentPage <= 0 ? '' : 'hidden'}`}>
+        <div className={`${pageContext.currentPage <= 0 ? '' : 'hidden'} mx-4 2xl:mx-80`}>
           <div className="relative container mx-auto bg-green-500 flex items-center justify-between border border-transparent rounded-xl">
-            <h1 className="absolute left-14 top-16 text-4xl text-white  font-bold pb-2">
-              Dicas e conteúdos exclusivos com
+            <h1 className="absolute left-14 top-16 text-xl sm:text-4xl text-white  font-bold pb-2">
+              Dicas e conteúdos exclusivos
             </h1>
-            <h1 className="absolute left-14 top-28 text-4xl text-white  font-bold pb-2">
-              os nossos professores!
+            <h1 className="absolute left-14 top-28 text-xl sm:text-4xl text-white font-bold pb-2">
+              com os nossos professores!
             </h1>
-            <p className="absolute left-14 top-40 text-xl text-white font-medium py-2">
+            <p className="absolute left-14 top-40 text-lg sm:text-xl text-white font-medium py-2">
               Compartilhe saúde com seus amigos!
             </p>
             <img className="h-64 w-full object-cover rounded-xl" src={banner} />
           </div>
         </div>
-        <div className={`${pageContext.currentPage <= 0 ? '' : 'hidden'}`}>
+        <div className={`${pageContext.currentPage <= 0 ? '' : 'hidden'} mx-4 2xl:mx-80`}>
           <BlogCategories>
-            {data.categories.edges.slice(0, 3).map(({ node }) => (
+            {data.categories.edges.map(({ node }) => (
               <BlogCategoriesItem
                 category={node.category}
                 image={node.image.gatsbyImageData}
@@ -60,7 +60,7 @@ const Blog = ({ data, pageContext }) => {
               description={node.description}
               authorName={node.author?.name}
               authorImageUrl={node.author?.image.gatsbyImageData}
-              authorHref={node.author?.url}
+              authorHref={node.author?.urlInstagram}
               datetime={node.createdAt}
               date={new Date(node.createdAt).toLocaleDateString()}
               readingTime={node.readTime}
@@ -76,6 +76,10 @@ const Blog = ({ data, pageContext }) => {
               date={new Date(node.createdAt).toLocaleDateString()}
               description={node.description}
               href={node.slug}
+              authorName={node.author?.name}
+              authorImageUrl={node.author?.image.gatsbyImageData}
+              authorHref={node.author?.urlInstagram}
+              readingTime={node.readTime}
             />
           ))}
         </BlogCategory>
@@ -88,7 +92,12 @@ const Blog = ({ data, pageContext }) => {
 
 export const pageQuery = graphql`
   query ($skip: Int!, $limit: Int!) {
-    posts: allContentfulPost(limit: $limit, skip: $skip, filter: { visible: { eq: true } }) {
+    posts: allContentfulPost(
+      limit: $limit
+      skip: $skip
+      filter: { visible: { eq: true } }
+      sort: { order: DESC, fields: createdAt }
+    ) {
       edges {
         node {
           title
@@ -109,7 +118,7 @@ export const pageQuery = graphql`
             image {
               gatsbyImageData
             }
-            url
+            urlInstagram
           }
         }
       }

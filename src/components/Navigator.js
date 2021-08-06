@@ -2,8 +2,10 @@ import React from 'react'
 import logo from '../assets/logo.png'
 
 const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobile }) => (
-  <div className="container mx-auto h-24 flex items-center justify-between">
-    <img className="h-16" src={logo} alt="logo" />
+  <div className="container mx-auto h-24 flex items-center justify-between 2xl:px-32">
+    <a href="/blog">
+      <img className="h-16 ml-2 sm:ml-0" src={logo} alt="logo" />
+    </a>
     <nav className="hidden sm:flex items-center justify-between">
       <a
         className="px-4 text-green-600 hover:text-green-800"
@@ -11,7 +13,7 @@ const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobi
       >
         Cursos
       </a>
-      <a className="px-4 text-green-600 hover:text-green-800" href="#">
+      <a className="px-4 text-green-600 hover:text-green-800" href="/authors">
         Autores
       </a>
       <a className="px-4" href="#">
@@ -58,13 +60,13 @@ const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobi
     <div
       className={`${
         showMenuMobile ? '' : 'hidden'
-      } absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden`}
+      } absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-10`}
     >
       <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
         <div className="px-5 pt-4 flex items-center justify-between">
-          <div>
-            <img className="h-8 w-auto" src={logo} alt="" />
-          </div>
+          <a href="/blog">
+            <img className="h-8 w-auto" src={logo} alt="logo" />
+          </a>
           <div className="-mr-2">
             <button
               type="button"
@@ -92,20 +94,20 @@ const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobi
         </div>
         <div className="px-2 pt-2 pb-3">
           <a
-            href="#"
+            href="https://academia-cultural.kpages.online/resultadoja"
             className="block px-3 py-2 rounded-md text-base font-medium text-green-600 hover:text-green-800 hover:bg-green-50"
           >
-            Categorias
+            Cursos
           </a>
           <a
-            href="#"
+            href="/authors"
             className="block px-3 py-2 rounded-md text-base font-medium text-green-600 hover:text-green-800 hover:bg-green-50"
           >
-            Professores
+            Autores
           </a>
         </div>
         <a
-          href="#"
+          href="https://play.google.com/store/apps/details?id=com.academiacultural.culturalapp"
           target="_blank"
           className="block w-full px-5 py-3 text-center font-medium text-green-600 bg-gray-50 hover:bg-gray-100"
           rel="noreferrer"

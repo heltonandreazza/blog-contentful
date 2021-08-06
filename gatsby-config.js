@@ -7,8 +7,8 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENFUL_SPACE_ID,
         accessToken: process.env.CONTENFUL_ACCESS_TOKEN, // Delivery API
-        downloadLocal: true
-      }
+        downloadLocal: true,
+      },
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
@@ -26,5 +26,11 @@ module.exports = {
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       },
     },
-  ]
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `blog-contentful`,
+      },
+    },
+  ],
 }

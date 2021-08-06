@@ -36,7 +36,6 @@ export const BlogCard = ({
         <div className="flex-shrink-0">
           <a href={authorHref}>
             <span className="sr-only">{authorName}</span>
-            {/* <img className="h-10 w-10 rounded-full" src={authorImageUrl} alt="" /> */}
             <GatsbyImage className="h-10 w-10 rounded-full" image={authorImageUrl} />
           </a>
         </div>
@@ -49,12 +48,7 @@ export const BlogCard = ({
           <div className="flex space-x-1 text-sm text-gray-500">
             <time dateTime={datetime}>{date}</time>
             <span aria-hidden="true">&middot;</span>
-            <span>
-              {' '}
-              {readingTime}
-{' '}
-read
-</span>
+            <span>{readingTime}</span>
           </div>
         </div>
       </div>

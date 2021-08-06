@@ -5,7 +5,7 @@ import React from 'react'
 export const BlogCategoriesItem = ({ category, image, slug }) => (
   <Link
     to={`/blog${slug}`}
-    className="h-40 w-40 bg-green-100 border border-transparent shadow rounded-lg flex flex-col items-center justify-center mr-4 text-green-600 hover:bg-green-500 hover:text-white"
+    className="h-40 px-8 w-40 bg-green-100 border border-transparent shadow rounded-lg flex flex-col items-center justify-center mr-4 text-green-600 hover:bg-green-500 hover:text-white"
   >
     <GatsbyImage className="h-14 w-14" image={image} />
     <h1 className="text-lg pt-2">{category}</h1>

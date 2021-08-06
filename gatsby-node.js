@@ -74,7 +74,6 @@ exports.createPages = async ({ graphql, actions }) => {
     const totalPostsCategory = response.data.posts.edges.filter(
       filterByCategory(item.node.category)
     ).length
-    console.log('totalPostsCategory', totalPostsCategory)
     const numPagesCategory = Math.ceil(totalPostsCategory / pageSizeCategory)
 
     const templateCategory = path.resolve('src/templates/category.js')
@@ -93,6 +92,17 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
+  })
+  /** */
+
+  /** CREATE AUTHORS PAGES */
+  const authorsTemplate = path.resolve('src/templates/authors.js')
+  createPage({
+    path: '/authors',
+    component: authorsTemplate,
+    context: {
+      slug: '/authors',
+    },
   })
   /** */
 }

@@ -6,6 +6,7 @@ import BlogPagination from '../components/BlogPagination'
 import Footer from '../components/Footer'
 import Navigator from '../components/Navigator'
 import Seo from '../components/Seo'
+import '../styles/global.css'
 
 const Blog = ({ data, pageContext }) => {
   const [showMenuMobile, setShowMenuMobile] = useState(false)
@@ -29,7 +30,7 @@ const Blog = ({ data, pageContext }) => {
               description={node.description}
               authorName={node.author?.name}
               authorImageUrl={node.author?.image.gatsbyImageData}
-              authorHref={node.author?.url}
+              authorHref={node.author?.urlInstagram}
               datetime={node.createdAt}
               date={new Date(node.createdAt).toLocaleDateString()}
               readingTime={node.readTime}
@@ -65,6 +66,7 @@ export const pageQuery = graphql`
       limit: $limit
       skip: $skip
       filter: { visible: { eq: true }, categories: { elemMatch: { slug: { eq: $slug } } } }
+      sort: { order: DESC, fields: createdAt }
     ) {
       edges {
         node {
@@ -86,7 +88,7 @@ export const pageQuery = graphql`
             image {
               gatsbyImageData
             }
-            url
+            urlInstagram
           }
         }
       }
